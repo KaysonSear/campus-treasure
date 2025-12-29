@@ -52,13 +52,14 @@ export default function ProfileScreen() {
           {[
             { icon: '📦', title: '我发布的', desc: '查看我发布的物品' },
             { icon: '❤️', title: '我的收藏', desc: '收藏的宝贝' },
-            { icon: '📋', title: '我的订单', desc: '买入/卖出记录' },
+            { icon: '📋', title: '我的订单', desc: '买入/卖出记录', path: '/order/list' },
             { icon: '⭐', title: '信用评价', desc: '我的信用分' },
             { icon: '⚙️', title: '设置', desc: '账号与安全' },
           ].map((item, index) => (
             <TouchableOpacity
               key={index}
               className="flex-row items-center px-4 py-4 border-b border-gray-100"
+              onPress={() => item.path && router.push(item.path as any)}
             >
               <Text className="text-2xl mr-4">{item.icon}</Text>
               <View className="flex-1">

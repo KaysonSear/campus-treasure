@@ -8,6 +8,7 @@ export interface Category {
 export interface Item {
   id: string;
   title: string;
+  description: string;
   price: number;
   originalPrice?: number;
   images: string[];
@@ -27,11 +28,27 @@ export interface Item {
   };
 }
 
-export interface PaginatedResponse<T> {
-  data: T[];
-  meta: {
-    page: number;
-    pageSize: number;
-    total: number;
+export interface Order {
+  id: string;
+  orderNo: string;
+  itemId: string;
+  item: Item;
+  buyerId: string;
+  buyer: {
+    id: string;
+    nickname: string;
+    avatar?: string;
   };
+  sellerId: string;
+  seller: {
+    id: string;
+    nickname: string;
+    avatar?: string;
+  };
+  amount: number;
+  status: 'pending' | 'paid' | 'shipping' | 'completed' | 'cancelled';
+  deliveryType: 'delivery' | 'pickup';
+  address?: string;
+  contactPhone: string;
+  createdAt: string;
 }

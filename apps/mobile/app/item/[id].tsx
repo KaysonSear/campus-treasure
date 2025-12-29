@@ -56,7 +56,11 @@ export default function ItemDetailScreen() {
       return;
     }
 
-    Alert.alert('提示', '购买功能开发中');
+    // 跳转到下单确认页
+    router.push({
+      pathname: '/order/create',
+      params: { itemId: id },
+    });
   };
 
   if (isLoading) {

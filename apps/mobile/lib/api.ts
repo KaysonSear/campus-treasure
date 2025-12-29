@@ -75,6 +75,13 @@ export const api = {
       body: JSON.stringify(data),
     }),
 
+  patch: <T>(endpoint: string, data?: unknown, config?: RequestConfig) =>
+    request<T>(endpoint, {
+      ...config,
+      method: 'PATCH',
+      body: JSON.stringify(data),
+    }),
+
   delete: <T>(endpoint: string, config?: RequestConfig) =>
     request<T>(endpoint, { ...config, method: 'DELETE' }),
 };
