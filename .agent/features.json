@@ -192,14 +192,18 @@
           "name": "Next.js 16.1.1项目初始化",
           "priority": "high",
           "hours": 1.5,
-          "platform": "backend"
+          "platform": "backend",
+          "status": "completed",
+          "completedDate": "2025-12-29"
         },
         {
           "id": "BE-002",
           "name": "Prisma ORM配置",
           "priority": "high",
           "hours": 1.5,
-          "platform": "backend"
+          "platform": "backend",
+          "status": "completed",
+          "completedDate": "2025-12-29"
         },
         {
           "id": "BE-003",
