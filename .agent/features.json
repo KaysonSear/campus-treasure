@@ -1,6 +1,6 @@
 {
   "project": {
-    "name": "xiaoyuanbao",
+    "name": "campus-treasure",
     "displayName": "校园宝 (Campus Treasure)",
     "version": "1.0.0",
     "description": "Campus second-hand trading platform with React Native + Next.js",
@@ -11,7 +11,7 @@
     "highPriority": 45,
     "mediumPriority": 70,
     "lowPriority": 35,
-    "completedFeatures": 41
+    "completedFeatures": 43
   },
   "categories": [
     {
@@ -425,7 +425,9 @@
           "name": "认证中间件",
           "priority": "high",
           "hours": 1,
-          "platform": "backend"
+          "platform": "backend",
+          "status": "completed",
+          "completedDate": "2025-12-29"
         },
         {
           "id": "AUTH-011",
@@ -498,7 +500,9 @@
           "name": "获取当前用户API",
           "priority": "high",
           "hours": 0.5,
-          "platform": "backend"
+          "platform": "backend",
+          "status": "completed",
+          "completedDate": "2025-12-29"
         },
         {
           "id": "USER-002",
@@ -1537,5 +1541,5 @@
     "DB-003",
     "DB-004"
   ],
-  "completedFeatures": 1
+  "completedFeatures": 43
 }

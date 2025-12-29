@@ -181,3 +181,33 @@
 - **提交**: `pending` feat(AUTH-006): Implement password login API
 - **验证**: E2E测试通过 (Register -> Login -> Get Me)
 - **下次建议**: AUTH-010 (认证中间件) 或 USER-001 (获取当前用户API)
+
+### Session #6 (2025-12-29)
+
+- **系统**: Windows
+- **完成功能**: AUTH-010 - 认证中间件
+- **提交**: `feat(AUTH-010): Implement authentication middleware`
+- **验证**:
+  - Middleware logic verified via `/api/auth/test` (401) and `/api/test` (200).
+  - Integration tests failed due to DB connection issues (Docker not running on host).
+  - `pnpm` environment fixed and dependencies re-installed.
+  - `Prisma Client` generated for Windows.
+- **已知问题**: 数据库服务(Docker)未启动，导致注册/登录API报错500。需用户手动启动 Docker Desktop 并运行 `docker-compose up -d`。
+- **下次建议**: 启动数据库后验证 AUTH-006 和 AUTH-010 的完整流程。
+
+### Session #7 (2025-12-29)
+
+- **系统**: Windows
+- **完成功能**: USER-001 - 获取当前用户API (及 AUTH-010 代码提交)
+- **提交**: \eat(USER-001): Implement Get Current User API and add unit tests\
+- **状态**: 代码已完成，验证受阻。
+- **环境变更**:
+  - 安装了 \jest\, \ s-jest\ 等测试依赖。
+  - 创建了 \jest.config.js\。
+  - 修复了 \package.json\ 依赖缺失。
+- **遇到问题**:
+  1. **Docker**: 数据库容器未运行，无法进行集成测试。
+  2. **Jest**: 运行报错 \onExit is not a function\ (依赖版本冲突)，导致单元测试无法执行。
+- **下次建议**:
+  1. **必须**先解决基础设施问题：启动 Docker Desktop，修复 Jest 环境。
+  2. 验证 \USER-001\ 和 \AUTH-010\。
