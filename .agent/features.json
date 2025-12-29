@@ -11,7 +11,7 @@
     "highPriority": 45,
     "mediumPriority": 70,
     "lowPriority": 35,
-    "completedFeatures": 40
+    "completedFeatures": 41
   },
   "categories": [
     {
@@ -372,7 +372,9 @@
           "name": "手机号注册API",
           "priority": "high",
           "hours": 2,
-          "platform": "backend"
+          "platform": "backend",
+          "status": "completed",
+          "completedDate": "2025-12-29"
         },
         {
           "id": "AUTH-004",
