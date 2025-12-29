@@ -118,14 +118,18 @@
           "name": "Expo项目初始化",
           "priority": "high",
           "hours": 2,
-          "platform": "mobile"
+          "platform": "mobile",
+          "status": "completed",
+          "completedDate": "2025-12-29"
         },
         {
           "id": "MOB-002",
           "name": "Expo Router配置",
           "priority": "high",
           "hours": 1.5,
-          "platform": "mobile"
+          "platform": "mobile",
+          "status": "completed",
+          "completedDate": "2025-12-29"
         },
         {
           "id": "MOB-003",
