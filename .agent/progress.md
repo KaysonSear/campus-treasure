@@ -211,3 +211,14 @@
 - **下次建议**:
   1. **必须**先解决基础设施问题：启动 Docker Desktop，修复 Jest 环境。
   2. 验证 \USER-001\ 和 \AUTH-010\。
+
+### Verification Update (2025-12-29)
+
+- **基础设施**: Docker MongoDB 已启动 (rs0 @ 127.0.0.1:27017)。
+- **验证脚本**: \scripts/verify-user-flow.js\
+- **验证结果**: 全部通过
+  - 注册 (AUTH-003): OK
+  - 登录 (AUTH-006): OK (Token 获取成功)
+  - 中间件 (AUTH-010): OK (Token 验证通过)
+  - 获取/更新用户 (USER-001): OK
+- **下一步**: 开始 AUTH-012 (移动端 Token 存储)。
