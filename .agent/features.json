@@ -47,7 +47,7 @@
       "id": "backend-setup",
       "name": "🖥️ 后端初始化",
       "features": [
-        {"id": "BE-001", "name": "Next.js 15项目初始化", "priority": "high", "hours": 1.5, "platform": "backend"},
+        {"id": "BE-001", "name": "Next.js 16.1.1项目初始化", "priority": "high", "hours": 1.5, "platform": "backend"},
         {"id": "BE-002", "name": "Prisma ORM配置", "priority": "high", "hours": 1.5, "platform": "backend"},
         {"id": "BE-003", "name": "MongoDB连接配置", "priority": "high", "hours": 1, "platform": "backend"},
         {"id": "BE-004", "name": "Redis缓存配置", "priority": "medium", "hours": 1, "platform": "backend"},

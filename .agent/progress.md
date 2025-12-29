@@ -23,7 +23,7 @@
 - React Hook Form + Zod
 
 ### 后端
-- Next.js 15.1+ (App Router)
+- Next.js 16.1.1.1+ (App Router)
 - TypeScript 5.6+
 - Prisma 6.x (ORM)
 - MongoDB 8.x
@@ -98,7 +98,7 @@
 3. INF-003: TypeScript配置
 4. MOB-001: Expo项目初始化
 5. MOB-002: Expo Router配置
-6. BE-001: Next.js 15项目初始化
+6. BE-001: Next.js 16.1.1项目初始化
 7. BE-002: Prisma ORM配置
 8. BE-003: MongoDB连接配置
 9. DB-001: User模型定义

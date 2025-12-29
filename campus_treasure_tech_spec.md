@@ -45,7 +45,7 @@
                       ↓
 ┌─────────────────────────────────────────────────────────┐
 │                  后端服务 (Backend)                       │
-│              Next.js 15 + TypeScript + Prisma            │
+│              Next.js 16.1.1 + TypeScript + Prisma            │
 │  ┌──────────┬──────────┬──────────┬──────────┐         │
 │  │  API路由  │  认证授权 │  业务逻辑 │  文件处理 │         │
 │  └──────────┴──────────┴──────────┴──────────┘         │
@@ -454,7 +454,7 @@ campus-treasure/
 │   │   └── tsconfig.json
 │   │
 │   └── backend/                   # Next.js 后端
-│       ├── app/                   # Next.js 15 App Router
+│       ├── app/                   # Next.js 16.1.1 App Router
 │       │   ├── api/              # API路由
 │       │   │   ├── auth/         # 认证相关API
 │       │   │   ├── items/        # 物品相关API

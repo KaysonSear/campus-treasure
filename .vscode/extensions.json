@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "prisma.prisma",
+    "bradlc.vscode-tailwindcss",
+    "ms-vscode.vscode-typescript-next",
+    "expo.vscode-expo-tools",
+    "mongodb.mongodb-vscode",
+    "mikestead.dotenv",
+    "csstools.postcss",
+    "gruntfuggly.todo-tree"
+  ]
+}

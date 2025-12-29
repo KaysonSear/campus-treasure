@@ -1,0 +1,19 @@
+{
+    "name": "@xiaoyuanbao/backend",
+    "version": "1.0.0",
+    "private": true,
+    "description": "校园宝 Next.js 后端应用",
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "type-check": "tsc --noEmit",
+        "db:generate": "prisma generate",
+        "db:push": "prisma db push",
+        "db:studio": "prisma studio",
+        "clean": "rm -rf .next node_modules"
+    },
+    "dependencies": {},
+    "devDependencies": {}
+}
