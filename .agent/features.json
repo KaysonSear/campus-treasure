@@ -67,7 +67,9 @@
           "name": "Husky Git hooks配置",
           "priority": "medium",
           "hours": 1,
-          "platform": "all"
+          "platform": "all",
+          "status": "completed",
+          "completedDate": "2025-12-29"
         },
         {
           "id": "INF-007",
