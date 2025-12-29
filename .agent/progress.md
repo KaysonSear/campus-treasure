@@ -113,9 +113,18 @@
 - [x] `.agent/config.secure.json` - 敏感配置 (已存在)
 - [x] `.agent/features.json` - 功能拆解
 - [x] `.agent/progress.md` - 进度文档 (本文件)
-- [ ] `scripts/init.sh` - Linux初始化脚本
-- [ ] `scripts/init.ps1` - Windows初始化脚本
-- [ ] `.gitignore` - Git忽略配置
+- [x] `scripts/init.sh` - Linux初始化脚本
+- [x] `scripts/init.ps1` - Windows初始化脚本
+- [x] `.gitignore` - Git忽略配置
+- [x] `package.json` - 根目录包配置
+- [x] `pnpm-workspace.yaml` - 工作区配置
+- [x] `.vscode/extensions.json` - VS Code推荐扩展
+- [x] `.vscode/settings.json` - VS Code工作区设置
+- [x] `apps/mobile/` - 移动端目录结构 (7个子目录)
+- [x] `apps/backend/` - 后端目录结构 (5个子目录)
+- [x] `packages/shared-types/` - 共享类型包
+- [x] `packages/shared-utils/` - 共享工具包
+- [x] `docker/` - Docker配置目录
 
 ---
 
@@ -124,3 +133,14 @@
 | 日期 | 更新内容 |
 |------|---------|
 | 2025-12-29 | 项目初始化,完成功能拆解 |
+| 2025-12-29 | **INF-001** Monorepo项目结构初始化完成 (24文件, commit 8b23a35) |
+
+---
+
+## 会话记录
+
+### Session #1 (2025-12-29)
+- **系统**: Linux
+- **完成功能**: INF-001 - Monorepo项目结构初始化
+- **提交**: `8b23a35` feat(INF-001): Initialize Monorepo project structure
+- **下次建议**: INF-002 (pnpm工作区配置) 或 INF-003 (TypeScript配置)
