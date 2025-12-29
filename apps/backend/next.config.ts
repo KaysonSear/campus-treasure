@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: import('next').NextConfig = {
   reactStrictMode: true,
 
   // 实验性功能
   experimental: {
-    // 服务端操作
     serverActions: {
       bodySizeLimit: '2mb',
     },
@@ -19,11 +18,6 @@ const nextConfig = {
       },
     ],
   },
-
-  // 环境变量
-  env: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
-  },
 };
 
-module.exports = nextConfig;
+export default nextConfig;

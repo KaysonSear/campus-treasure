@@ -25,7 +25,7 @@
 
 ### 后端
 
-- Next.js 16.1.1.1+ (App Router)
+- Next.js 16.1.1+ (App Router)
 - TypeScript 5.6+
 - Prisma 6.x (ORM)
 - MongoDB 8.x
