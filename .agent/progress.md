@@ -134,6 +134,7 @@
 |------|---------|
 | 2025-12-29 | 项目初始化,完成功能拆解 |
 | 2025-12-29 | **INF-001** Monorepo项目结构初始化完成 (24文件, commit 8b23a35) |
+| 2025-12-29 | **INF-002** pnpm工作区配置完成 (5文件, commit 0bed68d) |
 
 ---
 
@@ -144,3 +145,10 @@
 - **完成功能**: INF-001 - Monorepo项目结构初始化
 - **提交**: `8b23a35` feat(INF-001): Initialize Monorepo project structure
 - **下次建议**: INF-002 (pnpm工作区配置) 或 INF-003 (TypeScript配置)
+
+### Session #2 (2025-12-29)
+- **系统**: Linux
+- **完成功能**: INF-002 - pnpm工作区配置
+- **提交**: `0bed68d` feat(INF-002): Configure pnpm workspace
+- **下次建议**: INF-003 (TypeScript配置) 或 INF-004 (ESLint配置)
+

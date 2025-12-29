@@ -18,7 +18,7 @@
       "name": "🏗️ 基础架构",
       "features": [
         {"id": "INF-001", "name": "Monorepo项目结构初始化", "priority": "high", "hours": 2, "platform": "all", "status": "completed", "completedDate": "2025-12-29"},
-        {"id": "INF-002", "name": "pnpm工作区配置", "priority": "high", "hours": 1, "platform": "all"},
+        {"id": "INF-002", "name": "pnpm工作区配置", "priority": "high", "hours": 1, "platform": "all", "status": "completed", "completedDate": "2025-12-29"},
         {"id": "INF-003", "name": "TypeScript配置", "priority": "high", "hours": 1, "platform": "all"},
         {"id": "INF-004", "name": "ESLint配置", "priority": "high", "hours": 1, "platform": "all"},
         {"id": "INF-005", "name": "Prettier配置", "priority": "high", "hours": 0.5, "platform": "all"},
