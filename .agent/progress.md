@@ -285,3 +285,16 @@
 - **提交**:
   - `e62f6fe` feat(PROFILE-001): Implement My Favorites and My Items
 - **验证**: TypeScript 类型检查通过
+
+### Session #12 (2025-12-30)
+
+- **系统**: Linux
+- **整体进度**: 59/68 → **60/68 (88%)**
+- **完成功能**:
+  1. USER-006 - 移动端编辑个人信息页面 (昵称/学校修改 + 头像上传)
+  2. Refactor - 统一 Auth 路由 (`/auth/*`) 并修复移动端类型定义
+- **提交**:
+  - `4df1703` feat(USER-006): Implement Edit Profile and Refactor Auth
+- **验证**:
+  - 移动端 TypeScript 类型检查通过
+  - 登录/注册流程验证
