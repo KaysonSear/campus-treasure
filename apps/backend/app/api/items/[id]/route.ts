@@ -24,9 +24,10 @@ function getUserIdFromToken(request: NextRequest): string | null {
 }
 
 // 获取物品详情
-export async function GET(_request: NextRequest, { params }: RouteParams) {
+export async function GET(request: NextRequest, { params }: RouteParams) {
   try {
     const { id } = await params;
+    const userId = getUserIdFromToken(request);
 
     const item = await prisma.item.findUnique({
       where: { id },
@@ -46,7 +47,20 @@ export async function GET(_request: NextRequest, { params }: RouteParams) {
       return errors.notFound('物品不存在');
     }
 
-    return successResponse(item);
+    let isFavorite = false;
+    if (userId) {
+      const favorite = await prisma.favorite.findUnique({
+        where: {
+          userId_itemId: {
+            userId,
+            itemId: id,
+          },
+        },
+      });
+      isFavorite = !!favorite;
+    }
+
+    return successResponse({ ...item, isFavorite });
   } catch (error) {
     console.error('Get item detail error:', error);
     return errors.internal('获取物品详情失败');

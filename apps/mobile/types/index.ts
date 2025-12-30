@@ -20,6 +20,7 @@ export interface Item {
     nickname: string;
     avatar?: string;
   };
+  isFavorite?: boolean;
 }
 
 export interface Order {

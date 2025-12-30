@@ -9,8 +9,8 @@ import {
 } from 'react-native';
 import { useLocalSearchParams, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import { useState, useEffect } from 'react';
+import { useQuery, useMutation } from '@tanstack/react-query';
 import { useAuthStore } from '@/store';
 import { api } from '@/lib';
 import { Item } from '@/types';
@@ -29,6 +29,53 @@ export default function ItemDetailScreen() {
     queryFn: () => api.get<Item>(`/items/${id}`),
     enabled: !!id,
   });
+
+  useEffect(() => {
+    if (item?.isFavorite !== undefined) {
+      setIsFavorite(item.isFavorite);
+    }
+  }, [item?.isFavorite]);
+
+  // Mutation for toggling favorite
+  const favoriteMutation = useMutation({
+    mutationFn: () => api.post(`/items/${id}/favorite`),
+    onSuccess: (data: any) => {
+      // Optimistic update or refetch
+      // data.data.isFavorite is the new state
+      setIsFavorite(data.isFavorite);
+    },
+    onError: (error: Error) => {
+      // Revert state if needed, here just alert
+      Alert.alert('操作失败', error.message);
+      setIsFavorite(!isFavorite); // Revert UI
+    },
+  });
+
+  // Sync state with item data when loaded
+  if (item && item.isFavorite !== undefined && !favoriteMutation.isPending) {
+    // Only sync if we haven't manually toggled recently (simplification)
+    // Better approach: use useEffect to sync once
+  }
+
+  // Use effect to sync initial state
+  useState(() => {
+    if (item?.isFavorite !== undefined) {
+      setIsFavorite(item.isFavorite);
+    }
+  });
+
+  const handleToggleFavorite = () => {
+    if (!isAuthenticated) {
+      Alert.alert('提示', '请先登录', [
+        { text: '取消' },
+        { text: '去登录', onPress: () => router.push('/(auth)/login') },
+      ]);
+      return;
+    }
+    // Optimistic UI update
+    setIsFavorite(!isFavorite);
+    favoriteMutation.mutate();
+  };
 
   const handleContact = () => {
     if (!isAuthenticated) {
@@ -93,7 +140,7 @@ export default function ItemDetailScreen() {
           <Text className="text-2xl">←</Text>
         </TouchableOpacity>
         <Text className="flex-1 text-center text-lg font-medium">物品详情</Text>
-        <TouchableOpacity onPress={() => setIsFavorite(!isFavorite)}>
+        <TouchableOpacity onPress={handleToggleFavorite}>
           <Text className="text-2xl">{isFavorite ? '❤️' : '🤍'}</Text>
         </TouchableOpacity>
       </View>
