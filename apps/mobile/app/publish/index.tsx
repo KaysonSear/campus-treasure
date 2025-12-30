@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import * as ImagePicker from 'expo-image-picker';
 import {
   View,
   Text,
@@ -7,6 +8,7 @@ import {
   ScrollView,
   Alert,
   ActivityIndicator,
+  Image,
 } from 'react-native';
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -47,12 +49,29 @@ export default function PublishItemScreen() {
     },
   });
 
-  // 模拟添加图片
-  const handleAddImage = () => {
+  // 选择图片
+  const handleAddImage = async () => {
     if (images.length >= 9) return;
-    // 暂时使用占位图
-    const mockImage = `https://picsum.photos/400/400?random=${Math.random()}`;
-    setImages([...images, mockImage]);
+
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ['images'],
+        allowsEditing: true,
+        aspect: [1, 1], // Square aspect ratio for items
+        quality: 0.5,
+        base64: true,
+      });
+
+      if (!result.canceled && result.assets && result.assets.length > 0) {
+        const asset = result.assets[0];
+        if (asset?.base64) {
+          const base64Image = `data:image/jpeg;base64,${asset.base64}`;
+          setImages([...images, base64Image]);
+        }
+      }
+    } catch (error) {
+      Alert.alert('错误', '选择图片失败');
+    }
   };
 
   // 未登录重定向
@@ -111,18 +130,17 @@ export default function PublishItemScreen() {
         <View className="bg-white rounded-xl p-4 mb-4">
           <Text className="text-gray-800 font-medium mb-3">物品图片 ({images.length}/9)</Text>
           <View className="flex-row flex-wrap">
-            {images.map((_img, index) => (
+            {images.map((img, index) => (
               <View
                 key={index}
                 className="w-24 h-24 bg-gray-100 rounded-xl mr-2 mb-2 overflow-hidden relative"
               >
-                {/* 这里应该用 Image 组件 */}
-                <Text className="text-xs p-1">图片{index + 1}</Text>
+                <Image source={{ uri: img }} className="w-full h-full" resizeMode="cover" />
                 <TouchableOpacity
-                  className="absolute top-0 right-0 bg-red-500 w-5 h-5 items-center justify-center rounded-bl"
+                  className="absolute top-0 right-0 bg-black/50 w-6 h-6 items-center justify-center rounded-bl"
                   onPress={() => setImages(images.filter((_, i) => i !== index))}
                 >
-                  <Text className="text-white text-xs">x</Text>
+                  <Text className="text-white text-xs">✕</Text>
                 </TouchableOpacity>
               </View>
             ))}
@@ -132,7 +150,7 @@ export default function PublishItemScreen() {
                 onPress={handleAddImage}
               >
                 <Text className="text-3xl text-gray-400">+</Text>
-                <Text className="text-gray-400 text-xs mt-1">添加(模拟)</Text>
+                <Text className="text-gray-400 text-xs mt-1">添加</Text>
               </TouchableOpacity>
             )}
           </View>

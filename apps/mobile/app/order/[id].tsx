@@ -89,9 +89,9 @@ export default function OrderDetailScreen() {
         {order.status === 'pending' && isBuyer && (
           <TouchableOpacity
             className="bg-primary-500 py-3 rounded-full mb-3"
-            onPress={() => updateStatusMutation.mutate('pay')}
+            onPress={() => router.push({ pathname: '/order/pay', params: { id: order.id } })}
           >
-            <Text className="text-white text-center font-bold">立即支付 (模拟)</Text>
+            <Text className="text-white text-center font-bold">去支付</Text>
           </TouchableOpacity>
         )}
 
