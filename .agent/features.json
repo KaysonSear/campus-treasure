@@ -314,10 +314,12 @@
         },
         {
           "id": "DB-011",
-          "name": "初始数据种子脚本",
+          "name": "Init data seed脚本",
           "priority": "medium",
-          "hours": 1.5,
-          "platform": "backend"
+          "hours": 2,
+          "platform": "backend",
+          "status": "completed",
+          "completedDate": "2025-12-30"
         }
       ]
     },
