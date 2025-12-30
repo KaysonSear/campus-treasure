@@ -17,38 +17,15 @@ model User {
   passwordHash  String?
   nickname      String
   avatar        String?
-  studentId     String?
-  realName      String?
-  isVerified    Boolean   @default(false)
-  creditScore   Int       @default(100)
-  creditLevel   String    @default("普通")
-  ecoPoints     Int       @default(0)
-  schoolId      String?   @db.ObjectId
-  school        School?   @relation(fields: [schoolId], references: [id])
-
+  school        String?
+  
   // 关联
   items         Item[]
   orders        Order[]   @relation("BuyerOrders")
-  soldOrders    Order[]   @relation("SellerOrders")
-  favorites     Favorite[]
   messages      Message[]
 
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
-}
-
-// ============= 学校模型 =============
-model School {
-  id            String    @id @default(auto()) @map("_id") @db.ObjectId
-  name          String    @unique
-  province      String
-  city          String
-  address       String?
-
-  users         User[]
-  items         Item[]
-
-  createdAt     DateTime  @default(now())
 }
 
 // ============= 物品模型 =============
@@ -57,85 +34,39 @@ model Item {
   title         String
   description   String
   price         Float
-  originalPrice Float?
   images        String[]
   condition     String    // 全新, 9成新, 8成新...
-  categoryId    String    @db.ObjectId
-  category      Category  @relation(fields: [categoryId], references: [id])
+  category      String
+  status        String    @default("available") // available, sold, removed
+  
   sellerId      String    @db.ObjectId
   seller        User      @relation(fields: [sellerId], references: [id])
-  schoolId      String    @db.ObjectId
-  school        School    @relation(fields: [schoolId], references: [id])
-  location      String?
-  status        String    @default("available") // available, sold, rented, removed
-  type          String    @default("sale") // sale, rent
-  views         Int       @default(0)
-
+  
   orders        Order[]
-  favorites     Favorite[]
 
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 
   @@index([sellerId])
-  @@index([schoolId])
-  @@index([categoryId])
+  @@index([category])
   @@index([status])
-}
-
-// ============= 分类模型 =============
-model Category {
-  id            String    @id @default(auto()) @map("_id") @db.ObjectId
-  name          String    @unique
-  icon          String?
-  parentId      String?   @db.ObjectId
-  sort          Int       @default(0)
-
-  items         Item[]
-
-  createdAt     DateTime  @default(now())
 }
 
 // ============= 订单模型 =============
 model Order {
   id            String    @id @default(auto()) @map("_id") @db.ObjectId
-  orderNo       String    @unique
   itemId        String    @db.ObjectId
   item          Item      @relation(fields: [itemId], references: [id])
   buyerId       String    @db.ObjectId
   buyer         User      @relation("BuyerOrders", fields: [buyerId], references: [id])
-  sellerId      String    @db.ObjectId
-  seller        User      @relation("SellerOrders", fields: [sellerId], references: [id])
-  type          String    // purchase, rent
   amount        Float
-  deposit       Float?
-  status        String    @default("pending") // pending, paid, shipping, completed, cancelled
-  payMethod     String?   // wechat, alipay
-  payTime       DateTime?
-  deliveryType  String    // delivery, pickup
-  deliveryFee   Float?
-  address       String?
-  contactPhone  String
+  status        String    @default("pending") // pending, paid, shipped, completed, cancelled
 
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 
   @@index([buyerId])
-  @@index([sellerId])
   @@index([status])
-}
-
-// ============= 收藏模型 =============
-model Favorite {
-  id            String    @id @default(auto()) @map("_id") @db.ObjectId
-  userId        String    @db.ObjectId
-  user          User      @relation(fields: [userId], references: [id])
-  itemId        String    @db.ObjectId
-  item          Item      @relation(fields: [itemId], references: [id])
-
-  createdAt     DateTime  @default(now())
-
-  @@unique([userId, itemId])
 }
 
 // ============= 消息模型 =============

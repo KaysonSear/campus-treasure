@@ -1,5 +1,5 @@
 /**
- * @xiaoyuanbao/shared-types
+ * @campus-treasure/shared-types
  * 校园宝共享类型定义
  */
 

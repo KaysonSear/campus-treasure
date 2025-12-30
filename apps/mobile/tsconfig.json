@@ -16,10 +16,10 @@
       "@lib/*": ["./lib/*"],
       "@store/*": ["./store/*"],
       "@types/*": ["./types/*"],
-      "@xiaoyuanbao/shared-types": ["../../packages/shared-types/src"],
-      "@xiaoyuanbao/shared-utils": ["../../packages/shared-utils/src"]
+      "@campus-treasure/shared-types": ["../../packages/shared-types/src"],
+      "@campus-treasure/shared-utils": ["../../packages/shared-utils/src"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", "app.json"],
+  "include": ["**/*.ts", "**/*.tsx", "app.json", "nativewind-env.d.ts"],
   "exclude": ["node_modules", ".expo", "dist", "babel.config.js", "metro.config.js"]
 }

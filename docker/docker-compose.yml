@@ -3,7 +3,7 @@ version: '3.8'
 services:
   mongodb:
     image: mongo:8.0
-    container_name: xiaoyuanbao-mongo
+    container_name: campus-treasure-mongo
     ports:
       - '27017:27017'
     volumes:
@@ -13,7 +13,7 @@ services:
 
   redis:
     image: redis:7.2
-    container_name: xiaoyuanbao-redis
+    container_name: campus-treasure-redis
     ports:
       - '6379:6379'
     volumes:

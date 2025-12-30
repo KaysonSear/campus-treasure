@@ -24,8 +24,8 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@xiaoyuanbao/shared-types": ["packages/shared-types/src"],
-      "@xiaoyuanbao/shared-utils": ["packages/shared-utils/src"]
+      "@campus-treasure/shared-types": ["packages/shared-types/src"],
+      "@campus-treasure/shared-utils": ["packages/shared-utils/src"]
     }
   },
   "exclude": ["node_modules", "dist", ".next", ".expo", "coverage"]

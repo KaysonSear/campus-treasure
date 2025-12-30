@@ -1,5 +1,5 @@
 /**
- * @xiaoyuanbao/shared-utils
+ * @campus-treasure/shared-utils
  * 校园宝共享工具函数
  */
 

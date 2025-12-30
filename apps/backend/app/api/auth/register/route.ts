@@ -45,16 +45,12 @@ export async function POST(request: NextRequest) {
         passwordHash,
         nickname: finalNickname,
         avatar: defaultAvatar,
-        creditScore: 100,
-        creditLevel: '普通',
-        ecoPoints: 0,
       },
       select: {
         id: true,
         phone: true,
         nickname: true,
         avatar: true,
-        isVerified: true,
         createdAt: true,
       },
     });

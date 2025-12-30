@@ -1,12 +1,12 @@
 {
   "expo": {
     "name": "校园宝",
-    "slug": "xiaoyuanbao",
+    "slug": "campus-treasure",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
-    "scheme": "xiaoyuanbao",
+    "scheme": "campus-treasure",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -15,14 +15,14 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.xiaoyuanbao.app"
+      "bundleIdentifier": "com.campustreasure.app"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.xiaoyuanbao.app"
+      "package": "com.campustreasure.app"
     },
     "web": {
       "favicon": "./assets/favicon.png",
