@@ -11,7 +11,7 @@
     "highPriority": 40,
     "mediumPriority": 20,
     "lowPriority": 8,
-    "completedFeatures": 49
+    "completedFeatures": 50
   },
   "categories": [
     {
@@ -485,7 +485,9 @@
           "name": "物品搜索(基础)",
           "priority": "high",
           "hours": 2,
-          "platform": "backend"
+          "platform": "backend",
+          "status": "completed",
+          "completedDate": "2025-12-30"
         },
         {
           "id": "ITEM-011",
