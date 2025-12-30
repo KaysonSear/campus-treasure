@@ -379,13 +379,13 @@
 ### 核心功能模块
 
 1. ✅ **基础架构** - Monorepo、TypeScript、ESLint、Prettier
-2. ✅ **移动端** - Expo Router、Zustand、React Query、NativeWind
+2. ✅ **移动端** - Expo Router、Zustand、原生状态管理、NativeWind
 3. ✅ **后端** - Next.js 16.1.1、Prisma ORM、MongoDB、Redis
 4. ✅ **认证授权** - JWT、手机号注册、短信验证
 5. ✅ **用户系统** - 个人信息、头像上传、个人中心
 6. ✅ **物品模块** - 发布、浏览、搜索、收藏
 7. ✅ **订单系统** - 下单、支付、状态管理
-8. ✅ **聊天系统** - Socket.io 实时通讯
+8. ✅ **聊天系统** - 简化版 (已移除 Socket.io 以确保 Expo Go 兼容性)
 9. ✅ **UI组件库** - Button、Input、Card 组件
 
 ### 部署准备
