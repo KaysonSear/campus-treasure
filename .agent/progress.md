@@ -275,3 +275,13 @@
   - `22783aa` feat(ITEM-015,PAY-006): Polish publish and payment flow
   - `8c350b0` feat(FAVOR-001): Implement Item Favorites
 - **验证**: TypeScript 类型检查通过, ImagePicker 集成完成, Prisma Schema 更新
+
+### Session #11 (2025-12-30)
+
+- **系统**: Linux
+- **整体进度**: 57/68 → **59/68 (86%)**
+- **完成功能**:
+  1. PROFILE-001 - 我的发布/收藏列表页面 (移动端 + 后端筛选接口)
+- **提交**:
+  - `e62f6fe` feat(PROFILE-001): Implement My Favorites and My Items
+- **验证**: TypeScript 类型检查通过
