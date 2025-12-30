@@ -44,7 +44,7 @@ export async function PATCH(request: NextRequest) {
     const { userId } = authResult;
 
     const body = await request.json();
-    const allowedFields = ['nickname', 'avatar'];
+    const allowedFields = ['nickname', 'avatar', 'school'];
     const updateData: Record<string, unknown> = {};
 
     for (const field of allowedFields) {
@@ -65,6 +65,7 @@ export async function PATCH(request: NextRequest) {
         phone: true,
         nickname: true,
         avatar: true,
+        school: true,
         updatedAt: true,
       },
     });
