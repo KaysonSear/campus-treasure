@@ -11,7 +11,7 @@
     "highPriority": 40,
     "mediumPriority": 20,
     "lowPriority": 8,
-    "completedFeatures": 54
+    "completedFeatures": 55
   },
   "categories": [
     {
@@ -627,7 +627,9 @@
           "name": "移动端聊天页面",
           "priority": "high",
           "hours": 3,
-          "platform": "mobile"
+          "platform": "mobile",
+          "status": "completed",
+          "completedDate": "2025-12-30"
         }
       ]
     },

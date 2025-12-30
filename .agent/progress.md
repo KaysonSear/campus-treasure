@@ -226,7 +226,7 @@
 ### Session #8 (2025-12-30)
 
 - **系统**: Linux
-- **整体进度**: 44/68 → **54/68 (79%)**
+- **整体进度**: 44/68 → **55/68 (81%)**
 - **完成功能**:
   1. AUTH-012 - 移动端Token存储(SecureStore)
   2. Schema Migration - 修复所有后端API与简化版Prisma Schema对齐
@@ -240,6 +240,7 @@
   10. CHAT-004 - 发送消息API + 对话列表 + 消息历史
   11. USER-005 - 移动端个人中心页面 (头像/学校/统计/菜单)
   12. ITEM-021 - 移动端分类浏览与搜索 (Tabs/Search + SearchResult)
+  13. CHAT-008 - 移动端聊天页面 (对话列表/聊天详情/Poll刷新)
 - **提交**:
   - `e023ddf` feat(AUTH-012): SecureStore token storage
   - `5a89312` refactor: Align API routes with simplified schema
@@ -252,6 +253,7 @@
   - `f9389f9` feat(CHAT-004): Messages API
   - `830b024` feat(USER-005): Mobile profile page
   - `4357d1f` feat(ITEM-021): Mobile search and type fixes
+  - `1ca6953` feat(CHAT-008): Mobile chat page
 - **验证**: TypeScript 类型检查通过, Prisma generate/validate 成功
 - **改动文件**:
   - [NEW] `apps/mobile/lib/secure-storage.ts` - SecureStore 封装
