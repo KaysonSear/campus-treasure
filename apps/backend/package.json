@@ -5,9 +5,9 @@
   "description": "校园宝 Next.js 后端应用",
   "type": "module",
   "scripts": {
-    "dev": "tsx server.ts",
+    "dev": "next dev",
     "build": "next build",
-    "start": "NODE_ENV=production tsx server.ts",
+    "start": "next start",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
     "db:generate": "prisma generate",
@@ -27,7 +27,6 @@
     "next-auth": "5.0.0-beta.25",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "socket.io": "4.8.3",
     "tsx": "4.21.0",
     "zod": "^3.23.0"
   },
